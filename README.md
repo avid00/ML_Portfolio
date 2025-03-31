@@ -24,6 +24,11 @@ The following methods are applied together:
 - Random Forest + Decision Trees
 - RNN and Logistic Regression
 
+#### Data Sources too big to upload:
+1. [CNN Galaxy Data](https://www.kaggle.com/datasets/amydas/desi-galaxy-images-best-for-cnn)
+2. [Lightcurve Data (Transformers, RNN and LSTM)](https://www.kaggle.com/datasets/amydas/lightcurve-data)
+
+
 #### For each ML method directory there is:
 1. a jupyter notebook showcasing the use of the model
 2. a log file (csv or xlsx) explaining about progress and errors/changes
