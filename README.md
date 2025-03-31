@@ -11,7 +11,7 @@ Portfolio contains eleven machine learning (ML) Algorithms:
 3. Naive Bayes
 4. K-means
 5. K Nearest Neighbour
-6. Convolutional Neural Network - [online app]("https://cnnapp-amisha.streamlit.app/")
+6. Convolutional Neural Network - ([online app](https://cnnapp-amisha.streamlit.app/))
 7. Recurrent Neural Network
 8. Transformers
 9. Decision Trees 
