@@ -1,0 +1,24 @@
+Model,Description,Level of Difficulty,Time Spent (mins),Change From,Changed To,Old Code,New Code
+KNN,"Imported mean_absolute_error, mean_squared_error",Easy,10,N/A,Added imports for error measurement,,
+KNN,Used StandardScaler for feature normalization,Medium,15,N/A,Applied StandardScaler to dataset,,
+Data,Split data into labeled and unlabeled,Medium,20,No unlabeled data available,Manually removed labels from some data,,
+K-Means,"Standardized features, chose k=5 for K-Means",Medium,30,N/A,Set k=5 for initial testing,,
+KNN,Trained KNN on labeled dataset,Hard,40,N/A,KNN trained using labeled subset,,
+Preprocessing,Switched from StandardScaler to RobustScaler to handle outliers,Easy,10,StandardScaler (mean/std based),RobustScaler (median/IQR based),"scaler = StandardScaler()
+X_scaled = scaler.fit_transform(X)","scaler = RobustScaler()
+X_np = scaler.fit_transform(df[['u', 'g', 'r', 'i', 'z']])"
+Data Preparation,Simulated unlabeled data by hiding 70% of the labels,Medium,20,Fully labeled dataset,70% of labels removed (simulated unlabeled),N/A (used all labels),"train_test_split(X, y, test_size=0.7, stratify=y)"
+KMeans,Implemented custom KMeans in PyTorch for GPU usage,Hard,45,sklearn.cluster.KMeans,Custom torch-based KMeans loop,"from sklearn.cluster import KMeans
+kmeans = KMeans(n_clusters=3).fit(X)","def kmeans_torch(X, ...):
+  centroids = ...
+  for _ in range(...): ..."
+KMeans,Filtered pseudo-labels by confidence using centroid distance threshold,Hard,30,Cluster size filtering only,Top 25% most confident points kept,valid_clusters = cluster_sizes >= 50,"assigned_dist = cdist(...)
+threshold = quantile(...)
+mask = dist <= threshold"
+KNN,Replaced full-matrix cdist with mini-batch processing to fix OOM error,Medium,30,torch.cdist on entire test set,torch.cdist on batches (batch_size=1000),"dists = torch.cdist(X_test, X_train)","for batch in X_test:
+  dists = torch.cdist(batch, X_train)"
+Evaluation,Compared KNN predictions with ground truth of unlabeled data,Medium,15,No validation on pseudo-labeled set,Compared against hidden ground-truth labels,N/A,"classification_report(y_unlabeled_true, y_knn_pred)"
+Visualization,Fixed PCA distortion by filtering out extreme outliers using IQR,Medium,20,Unfiltered PCA input with full data,IQR-filtered PCA input,pca.fit_transform(X_combined.cpu().numpy()),"mask = (X >= Q1 - 1.5*IQR) & (X <= Q3 + 1.5*IQR)
+X_pca = PCA().fit_transform(X[mask])"
+,,,,,,,
+,,Total mins,285,,,,

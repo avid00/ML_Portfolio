@@ -1,0 +1,10 @@
+Model,Description,Level of Difficulty,Time Spent (mins),Change From,Changed To,Old Code,New Code
+LSTM,Loaded and sorted MANTRA lightcurve data by object ID and MJD,Easy,10,Raw CSV data,Sorted and grouped time-ordered sequences,NaN,NaN
+LSTM,Created sliding window sequences (10 timesteps) with next-step Mag as target,Medium,20,Unstructured time series,Overlapping supervised training samples,NaN,NaN
+LSTM,Normalized input and output values using global mean and std,Easy,5,Raw magnitude scale,Standardized values with zero mean,NaN,NaN
+LSTM,Built a single-layer LSTM model for regression with MSE loss,Medium,25,No model,LSTM + FC layer outputting predicted Mag,NaN,NaN
+LSTM,Trained model for 20 epochs using Adam optimizer,Medium,20,Untrained model,Final loss ≈ 0.0166,NaN,NaN
+LSTM,Plotted true vs predicted magnitude over 100 test samples,Easy,10,Raw predictions,Visual time-series comparison,NaN,NaN
+LSTM,Calculated accuracy within ±5% prediction tolerance,Easy,5,No quantitative regression metric,Accuracy = 99.34%,NaN,NaN
+ALL,Complete pipeline from preprocessing to evaluation,Medium,90,No structured notebook,"Modular, well-commented notebook",NaN,NaN
+NaN,NaN,NaN,total,NaN,195,NaN,NaN

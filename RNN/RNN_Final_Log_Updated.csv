@@ -1,0 +1,10 @@
+Model,Description,Level of Difficulty,Time Spent (mins),Change From,Changed To,Old Code,New Code
+RNN,Loaded and normalized lightcurve data by object ID,Medium,30,Raw magnitude data per row,"Grouped, sorted, and min-max scaled sequences",,
+RNN,Padded lightcurve sequences to uniform length (100 timesteps),Medium,20,Variable-length sequences,Uniform 2D tensor input for RNN,,
+RNN,Implemented vanilla RNN to extract 32-dimensional feature vectors,Hard,60-80,None,Custom PyTorch nn.RNN model with feature output,,
+K-Means,Clustered RNN features into 2 groups as pseudo-labels,Medium,20,Unlabeled feature set,Cluster-labeled dataset for downstream use,,
+Logistic Regression,Trained and evaluated classifier using pseudo-labels from K-Means,Medium,30,No label-based evaluation,~1.00 F1 score on KMeans-based labels,,
+RNN + Clustering,Visualized PCA and t-SNE plots of clustered features,Easy,40,No visual understanding of feature separability,2D projections showing distinct cluster boundaries,,
+ALL,"End-to-end pipeline: data prep, RNN, clustering, classification, visualization",Hard,60,No structured workflow,"Clean, reproducible, modular notebook with outputs",,
+,,,,,,,
+,,total,200,,,,

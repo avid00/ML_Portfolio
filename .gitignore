@@ -1,0 +1,22 @@
+# Ignore large model and data files
+final submission/CNN/Galaxy10.h5
+CNN/DESI.zip
+final submission/Transformers/combined_lightcurves_top5.npz
+
+# Also ignore any other .h5, .zip, or .npz files project-wide (optional)
+*.h5
+*.zip
+*.npz
+
+# Usual Python ignores
+__pycache__/
+*.py[cod]
+*.ipynb_checkpoints/
+
+# VS Code / PyCharm
+.vscode/
+.idea/
+
+# OS junk
+.DS_Store
+Thumbs.db
